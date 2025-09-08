@@ -1,3 +1,3 @@
 # RUN USING bash copyback.sh
 
-copy /etc/nixos/configuration.nix /etc/nixos/flake.nix .
+cp /etc/nixos/configuration{,-pc,-lappie}.nix /etc/nixos/flake.nix .

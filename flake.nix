@@ -19,10 +19,25 @@
       system = "x86_64-linux";
     in
     {
-      nixosConfigurations.lunya = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.lunya-pc = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./configuration.nix
+          ./configuration-pc.nix
+          ./hardware-configuration.nix
+
+          home-manager.nixosModules.home-manager
+
+          {
+            home-manager.users.lunya = {
+              home.stateVersion = "25.05";
+            };
+          }
+        ];
+      };
+      nixosConfigurations.lunya-lappie = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./configuration-lappie.nix
           ./hardware-configuration.nix
 
           home-manager.nixosModules.home-manager
