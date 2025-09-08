@@ -135,6 +135,7 @@
         rustc
         cargo
         devenv
+        phpactor
       ];
 
       programs.git = {
