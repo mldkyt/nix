@@ -149,8 +149,10 @@
           user = {
             name = "Lunya";
             email = "lunya@murena.io";
+            signingKey = "458591AD4C4C0233"; # needs import
           };
-          credential.helper = "store";
+          tag.gpgSign = true;
+          commit.gpgSign = true;
         };
       };
 
@@ -167,6 +169,7 @@
   programs.gnupg = {
     agent = {
       enable = true;
+      enableExtraSocket = true;
       pinentryPackage = pkgs.pinentry-qt;
     };
   };
