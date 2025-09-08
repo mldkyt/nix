@@ -123,6 +123,17 @@
         nil
         steam
         kdePackages.partitionmanager
+        obs-studio
+        vlc
+        libreoffice
+        shotcut
+        uv
+        go
+        hyfetch
+        fastfetch
+        qbittorrent
+        rustc
+        cargo
       ];
 
       programs.git = {
@@ -198,6 +209,7 @@
   networking.firewall.allowedTCPPorts = [
     22000
     21027
+    8000
   ];
   networking.firewall.allowedUDPPorts = [ 22000 ];
   # Or disable the firewall altogether.
