@@ -136,7 +136,6 @@
         cargo
         devenv
         phpactor
-        dbeaver-bin
       ];
 
       programs.git = {
