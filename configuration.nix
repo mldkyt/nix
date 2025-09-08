@@ -155,6 +155,7 @@
           };
           tag.gpgSign = true;
           commit.gpgSign = true;
+          credential.helper = "store";
         };
       };
 
