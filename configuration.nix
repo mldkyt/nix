@@ -136,6 +136,8 @@
         cargo
         devenv
         phpactor
+        prismlauncher
+        wineWowPackages.stagingFull
       ];
 
       programs.git = {
@@ -163,8 +165,6 @@
 
       home.stateVersion = "25.05";
     };
-
-  programs.nix-ld.enable = true;
 
   programs.gnupg = {
     agent = {
