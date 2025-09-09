@@ -138,6 +138,7 @@
         phpactor
         prismlauncher
         wineWowPackages.stagingFull
+        vmware-workstation
       ];
 
       programs.git = {
