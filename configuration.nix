@@ -138,6 +138,7 @@
         phpactor
         prismlauncher
         wineWowPackages.stagingFull
+        gimp3-with-plugins
       ];
 
       programs.git = {
