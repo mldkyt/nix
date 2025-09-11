@@ -161,10 +161,10 @@
         };
       };
 
-      nix.extraOptions = ''
-        extra-substituters = https://devenv.cachix.org
-        extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
-      '';
+      nix.settings.trusted-users = [
+        "root"
+        "lunya"
+      ];
 
       home.stateVersion = "25.05";
     };
@@ -237,6 +237,11 @@
   networking.firewall.allowedUDPPorts = [ 22000 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  nix.settings.trusted-users = [
+    "root"
+    "lunya"
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
