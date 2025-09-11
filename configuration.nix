@@ -140,7 +140,6 @@
         wineWowPackages.stagingFull
         gimp3-with-plugins
         kdePackages.kfind
-        netsurf-browser
       ];
 
       programs.git = {
