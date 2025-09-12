@@ -167,6 +167,11 @@
         "lunya"
       ];
 
+      nix.gc = {
+        automatic = true;
+        options = "--delete-older-than 3d";
+      };
+
       home.stateVersion = "25.05";
     };
 
