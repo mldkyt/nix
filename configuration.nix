@@ -171,6 +171,8 @@
         options = "--delete-older-than 3d";
       };
 
+      fonts.fontconfig.enable = true;
+
       home.stateVersion = "25.05";
     };
 
@@ -181,6 +183,14 @@
       pinentryPackage = pkgs.pinentry-qt;
     };
   };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
+  fonts.fontconfig.enable = true;
 
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
