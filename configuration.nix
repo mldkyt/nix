@@ -127,20 +127,14 @@
         vlc
         libreoffice
         shotcut
-        uv
-        go
         hyfetch
         fastfetch
         qbittorrent
-        rustc
-        cargo
         devenv
-        phpactor
         prismlauncher
         wineWowPackages.stagingFull
         gimp3-with-plugins
         kdePackages.kfind
-        jetbrains.idea-community
       ];
 
       programs.git = {
@@ -181,11 +175,6 @@
       enableExtraSocket = true;
       pinentryPackage = pkgs.pinentry-qt;
     };
-  };
-
-  programs.alvr = {
-    enable = true;
-    openFirewall = true;
   };
 
   services.flatpak.enable = true;
