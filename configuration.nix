@@ -140,6 +140,7 @@
         wineWowPackages.stagingFull
         gimp3-with-plugins
         kdePackages.kfind
+        jetbrains.idea-community
       ];
 
       programs.git = {
