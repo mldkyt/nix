@@ -188,6 +188,8 @@
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+    protontricks.enable = true;
   };
 
   fonts.fontconfig.enable = true;
