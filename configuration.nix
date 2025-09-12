@@ -135,6 +135,7 @@
         wineWowPackages.stagingFull
         gimp3-with-plugins
         kdePackages.kfind
+        kdePackages.filelight
       ];
 
       programs.git = {
