@@ -133,7 +133,7 @@
         devenv
         prismlauncher
         wineWowPackages.stagingFull
-        gimp3-with-plugins
+        gimp3
         kdePackages.kfind
         kdePackages.filelight
       ];
@@ -141,7 +141,7 @@
       programs.git = {
         enable = true;
         lfs.enable = true;
-        package = pkgs.gitFull;
+        package = pkgs.git;
         extraConfig = {
           init = {
             defaultBranch = "main";
