@@ -128,7 +128,6 @@
         steam
         kdePackages.partitionmanager
         obs-studio
-        vlc
         libreoffice
         shotcut
         hyfetch
@@ -141,6 +140,8 @@
         kdePackages.kfind
         kdePackages.filelight
         obsidian
+        handbrake
+        mpv-unwrapped
       ];
 
       programs.git = {
