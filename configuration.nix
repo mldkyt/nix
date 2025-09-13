@@ -140,6 +140,7 @@
         gimp3
         kdePackages.kfind
         kdePackages.filelight
+        obsidian
       ];
 
       programs.git = {
