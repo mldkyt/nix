@@ -143,6 +143,8 @@
         handbrake
         mpv-unwrapped
         rpi-imager
+        veracrypt
+        yt-dlp
       ];
 
       programs.git = {
