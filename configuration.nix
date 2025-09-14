@@ -142,6 +142,7 @@
         obsidian
         handbrake
         mpv-unwrapped
+        rpi-imager
       ];
 
       programs.git = {
