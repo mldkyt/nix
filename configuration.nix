@@ -145,6 +145,7 @@
         rpi-imager
         veracrypt
         yt-dlp
+        signal-desktop
       ];
 
       programs.git = {
