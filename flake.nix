@@ -49,5 +49,20 @@
           }
         ];
       };
+      nixosConfigurations.lunya-vm = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./configuration-vm.nix
+          ./hardware-configuration.nix
+
+          home-manager.nixosModules.home-manager
+
+          {
+            home-manager.users.lunya = {
+              home.stateVersion = "25.11";
+            };
+          }
+        ];
+      };
     };
 }
