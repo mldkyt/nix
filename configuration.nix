@@ -151,9 +151,6 @@
         shellcheck
         direnv
         floorp-bin
-        librewolf
-        mullvad-browser
-        servo
       ];
 
       programs.git = {
