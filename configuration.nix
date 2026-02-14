@@ -150,6 +150,10 @@
         vscodium
         shellcheck
         direnv
+        floorp-bin
+        librewolf
+        mullvad-browser
+        servo
       ];
 
       programs.git = {
@@ -276,9 +280,6 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "lunya";
-
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
