@@ -148,7 +148,7 @@
         kdePackages.kdenlive
         adwaita-fonts
         vlc
-        vscodium
+        vscode
         shellcheck
         direnv
         floorp-bin
