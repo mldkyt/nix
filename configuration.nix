@@ -137,7 +137,7 @@
         winetricks
         kdePackages.kfind
         kdePackages.filelight
-        kdePackages.krita
+        krita
         obsidian
         handbrake
         mpv-unwrapped
