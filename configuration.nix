@@ -117,7 +117,6 @@
         allowUnfree = true;
       };
       home.packages = with pkgs; [
-        keepassxc
         zed-editor
         (discord.override {
           withVencord = true;
@@ -129,23 +128,23 @@
         kdePackages.partitionmanager
         obs-studio
         libreoffice
-        shotcut
         hyfetch
         fastfetch
         qbittorrent
         devenv
         prismlauncher
         wineWowPackages.stagingFull
-        gimp3
+        winetricks
         kdePackages.kfind
         kdePackages.filelight
+        kdePackages.krita
         obsidian
         handbrake
         mpv-unwrapped
-        rpi-imager
         veracrypt
         yt-dlp
         signal-desktop
+        kdePackages.kdenlive
       ];
 
       programs.git = {
