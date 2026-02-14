@@ -35,4 +35,12 @@
     open = true;
   };
 
+  home-manager.users.lunya.programs.plasma.input.mice = [
+    {
+      productId = "4082";
+      vendorId = "046d";
+      name = "Logitech MX Master 3";
+      accelerationProfile = "none";
+    }
+  ];
 }

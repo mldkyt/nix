@@ -8,11 +8,18 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
   outputs =
     {
       nixpkgs,
       home-manager,
+      plasma-manager,
       ...
     }:
     let
@@ -22,12 +29,13 @@
       nixosConfigurations.lunya-pc = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
+          home-manager.nixosModules.home-manager
+
           ./configuration-pc.nix
           ./hardware-configuration.nix
 
-          home-manager.nixosModules.home-manager
-
           {
+            home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
             home-manager.users.lunya = {
               home.stateVersion = "25.11";
             };
@@ -37,12 +45,13 @@
       nixosConfigurations.lunya-lappie = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
+          home-manager.nixosModules.home-manager
+
           ./configuration-lappie.nix
           ./hardware-configuration.nix
 
-          home-manager.nixosModules.home-manager
-
           {
+            home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
             home-manager.users.lunya = {
               home.stateVersion = "25.11";
             };
@@ -52,12 +61,13 @@
       nixosConfigurations.lunya-vm = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
+          home-manager.nixosModules.home-manager
+
           ./configuration-vm.nix
           ./hardware-configuration.nix
 
-          home-manager.nixosModules.home-manager
-
           {
+            home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
             home-manager.users.lunya = {
               home.stateVersion = "25.11";
             };

@@ -19,7 +19,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
 
   # networking.hostName = "lunya-pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -109,6 +109,7 @@
     ];
   };
 
+  home-manager.backupFileExtension = "backup";
   home-manager.users.lunya =
     { pkgs, ... }:
     {
@@ -140,18 +141,22 @@
         krita
         obsidian
         handbrake
-        mpv-unwrapped
         veracrypt
         yt-dlp
         signal-desktop
         kdePackages.kdenlive
+        adwaita-fonts
+        vlc
+        vscodium
+        shellcheck
+        direnv
       ];
 
       programs.git = {
         enable = true;
         lfs.enable = true;
-        package = pkgs.git;
-        extraConfig = {
+        package = pkgs.gitFull;
+        settings = {
           init = {
             defaultBranch = "main";
           };
@@ -162,7 +167,51 @@
           };
           tag.gpgSign = true;
           commit.gpgSign = true;
-          credential.helper = "store";
+          credential.helper = "libsecret";
+        };
+      };
+
+      programs.plasma = {
+        enable = true;
+
+        workspace = {
+          lookAndFeel = "org.kde.breezedark.desktop";
+          cursor = {
+            cursorFeedback = "None";
+          };
+        };
+        fonts = {
+          general = {
+            family = "Adwaita Sans";
+            pointSize = 10;
+          };
+        };
+        input = {
+          keyboard = {
+            repeatDelay = 300;
+            repeatRate = 50;
+            numlockOnStartup = "on";
+            layouts = [
+              {
+                layout = "cz";
+              }
+              {
+                layout = "us";
+              }
+            ];
+          };
+        };
+        configFile."kdeglobals"."General"."AccentColor" = "255,170,255";
+        configFile."spectaclerc" = {
+          "General" = {
+            "autoSaveImage" = "true";
+            "clipboardGroup" = "PostScreenshotCopyLocation";
+          };
+        };
+        configFile."kglobalshortcutsrc" = {
+          "KDE Keyboard Layout Switcher" = {
+            "Switch to Next Keyboard Layout" = "Meta+Space,Switch to Next Keyboard Layout";
+          };
         };
       };
 
