@@ -14,12 +14,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
-  outputs =
-    {
+  outputs = inputs@{
       nixpkgs,
       home-manager,
       plasma-manager,
+      spicetify-nix,
       ...
     }:
     let
@@ -28,6 +30,7 @@
     {
       nixosConfigurations.lunya-pc = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit inputs; };
         modules = [
           home-manager.nixosModules.home-manager
 
@@ -35,7 +38,11 @@
           ./hardware-configuration.nix
 
           {
-            home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+            home-manager.sharedModules = [ 
+              plasma-manager.homeModules.plasma-manager
+              spicetify-nix.homeManagerModules.default
+            ];
+
             home-manager.users.lunya = {
               home.stateVersion = "25.11";
             };
@@ -44,6 +51,7 @@
       };
       nixosConfigurations.lunya-lappie = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit inputs; };
         modules = [
           home-manager.nixosModules.home-manager
 
@@ -60,6 +68,7 @@
       };
       nixosConfigurations.lunya-vm = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit inputs; };
         modules = [
           home-manager.nixosModules.home-manager
 
