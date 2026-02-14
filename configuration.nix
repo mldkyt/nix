@@ -219,6 +219,8 @@
         };
       };
 
+      services.kdeconnect.enable = true;
+
       nix.settings.trusted-users = [
         "root"
         "lunya"
@@ -304,11 +306,17 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [
-    22000
-    21027
-  ];
-  networking.firewall.allowedUDPPorts = [ 22000 ];
+  networking.firewall = {
+    allowedTCPPorts = [ 22000 21027 ];
+    allowedTCPPortRanges = [
+      { from = 1714; to = 1764; }
+    ];
+    allowedUDPPorts = [ 22000 ];
+    allowedUDPPortRanges = [
+      { from = 1714; to = 1764; }
+    ];
+  };
+  
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
