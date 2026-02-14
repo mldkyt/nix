@@ -213,7 +213,7 @@
         };
         configFile."kglobalshortcutsrc" = {
           "KDE Keyboard Layout Switcher" = {
-            "Switch to Next Keyboard Layout" = "Meta+Space,Switch to Next Keyboard Layout";
+            "Switch to Next Keyboard Layout" = "Meta+Space,Meta+Alt+K,Switch to Next Keyboard Layout";
           };
         };
       };
