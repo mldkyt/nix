@@ -150,6 +150,7 @@
         shellcheck
         direnv
         floorp-bin
+        sqlitebrowser
       ];
 
       programs.git = {
@@ -244,6 +245,10 @@
           disable_ai = true;
           languages."Nix".language_servers = ["!nil" "nixd"];
         };
+        mutableUserSettings = true;
+        mutableUserKeymaps = true;
+        mutableUserTasks = true;
+        mutableUserDebug = true;
       };
 
       services.kdeconnect.enable = true;
