@@ -218,7 +218,7 @@
         };
       };
 
-      programs.spicetify = 
+      programs.spicetify =
         let
           spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
         in {
@@ -281,15 +281,6 @@
 
   fonts.fontconfig.enable = true;
 
-  services.flatpak.enable = true;
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-
   systemd.sleep.extraConfig = ''
     AllowSuspend=no
     AllowHibernation=no
@@ -343,7 +334,7 @@
       { from = 1714; to = 1764; }
     ];
   };
-  
+
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

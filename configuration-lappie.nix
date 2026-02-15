@@ -7,39 +7,6 @@
 
   networking.hostName = "lunya-lappie";
 
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-
-      CPU_MIN_PERF_ON_AC = 0;
-      CPU_MAX_PERF_ON_AC = 100;
-      CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 20;
-
-      START_CHARGE_THRESH_BAT0 = 60;
-      STOP_CHARGE_THRESH_BAT0 = 65;
-    };
-  };
-
-  services.power-profiles-daemon.enable = false;
-
-  services.auto-cpufreq.enable = true;
-  services.auto-cpufreq.settings = {
-    battery = {
-      governor = "powersave";
-      turbo = "never";
-    };
-    charger = {
-      governor = "performance";
-      turbo = "auto";
-    };
-  };
-
   hardware.graphics = {
     enable = true;
   };
@@ -53,5 +20,33 @@
     powerManagement.finegrained = false;
     nvidiaSettings = true;
     open = true;
+  };
+
+  services.tor = {
+    enable = true;
+    client = {
+      enable = true;
+      dns.enable = true;
+    };
+    settings = {
+      DNSPort = [{
+        addr = "127.0.0.1";
+        port = 53;
+      }];
+    };
+  };
+
+  services.privoxy = {
+    enable = true;
+    enableTor = true;
+  };
+
+  networking = {
+    nameservers = [ "127.0.0.1" ];
+    proxy = {
+      default = "socks5h://127.0.0.1:9063";
+      httpProxy = "http://127.0.0.1:8118";
+      httpsProxy = "http://127.0.0.1:8118";
+    };
   };
 }
