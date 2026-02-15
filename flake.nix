@@ -59,7 +59,11 @@
           ./hardware-configuration.nix
 
           {
-            home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+            home-manager.sharedModules = [ 
+              plasma-manager.homeModules.plasma-manager
+              spicetify-nix.homeManagerModules.default
+            ];
+
             home-manager.users.lunya = {
               home.stateVersion = "25.11";
             };
@@ -76,7 +80,11 @@
           ./hardware-configuration.nix
 
           {
-            home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+            home-manager.sharedModules = [ 
+              plasma-manager.homeModules.plasma-manager
+              spicetify-nix.homeManagerModules.default
+            ];
+            
             home-manager.users.lunya = {
               home.stateVersion = "25.11";
             };
