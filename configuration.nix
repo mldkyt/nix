@@ -119,13 +119,11 @@
         allowUnfree = true;
       };
       home.packages = with pkgs; [
-        zed-editor
         (discord.override {
           withVencord = true;
         })
         kdePackages.kate
         nixd
-        nil
         steam
         kdePackages.partitionmanager
         obs-studio
@@ -234,6 +232,19 @@
             betterGenres
           ];
         };
+
+      programs.zed-editor = {
+        enable = true;
+        extensions = ["nix" "toml" "rust"];
+        userSettings = {
+          telemetry = {
+            diagnostics = false;
+            metrics = false;
+          };
+          disable_ai = true;
+          languages."Nix".language_servers = ["!nil" "nixd"];
+        };
+      };
 
       services.kdeconnect.enable = true;
 
