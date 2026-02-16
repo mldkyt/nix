@@ -126,7 +126,6 @@
         nixd
         steam
         kdePackages.partitionmanager
-        obs-studio
         libreoffice
         hyfetch
         fastfetch
@@ -169,6 +168,13 @@
           tag.gpgSign = true;
           commit.gpgSign = true;
           credential.helper = "libsecret";
+        };
+      };
+
+      programs.obs-studio = {
+        enable = true;
+        package = pkgs.obs-studio.override {
+          cudaSupport = true;
         };
       };
 
