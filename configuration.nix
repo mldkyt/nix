@@ -209,7 +209,7 @@
         configFile."spectaclerc" = {
           "General" = {
             "autoSaveImage" = "true";
-            "clipboardGroup" = "PostScreenshotCopyLocation";
+            "clipboardGroup" = "PostScreenshotCopyImage";
           };
         };
         configFile."kglobalshortcutsrc" = {
