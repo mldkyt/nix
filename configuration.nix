@@ -103,6 +103,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [
       #kdePackages.kate
@@ -292,6 +293,7 @@
     protontricks.enable = true;
   };
 
+  virtualisation.docker.enable = true;
   fonts.fontconfig.enable = true;
 
   systemd.sleep.extraConfig = ''
