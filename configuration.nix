@@ -150,6 +150,8 @@
         direnv
         floorp-bin
         sqlitebrowser
+        tenacity
+        teams-for-linux
       ];
 
       programs.git = {
