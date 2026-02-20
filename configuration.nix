@@ -153,6 +153,7 @@
         sqlitebrowser
         tenacity
         teams-for-linux
+	kdePackages.kolourpaint
       ];
 
       programs.git = {
