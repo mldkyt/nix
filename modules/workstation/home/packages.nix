@@ -5,9 +5,6 @@
 {
 
   home.packages = with pkgs; [
-    (discord.override {
-      withVencord = true;
-    })
     kdePackages.kate
     nixd
     steam

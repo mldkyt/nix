@@ -16,56 +16,56 @@
     };
   };
   outputs = inputs@{
-      nixpkgs,
-      home-manager,
-      plasma-manager,
-      ...
-    }:
-    let
-      system = "x86_64-linux";
-    in
-    {
-      nixosConfigurations.lunya-pc = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          home-manager.nixosModules.home-manager
+    nixpkgs,
+    home-manager,
+    plasma-manager,
+    ...
+  }:
+  let
+    system = "x86_64-linux";
+  in
+  {
+    nixosConfigurations.lunya-pc = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = { inherit inputs; };
+      modules = [
+        home-manager.nixosModules.home-manager
 
-          ./modules/workstation
-          ./modules/pc
-          ./hardware-configuration.nix
+        ./modules/workstation
+        ./modules/pc
+        ./hardware-configuration.nix
 
-          {
-            home-manager.sharedModules = [
-              plasma-manager.homeModules.plasma-manager
-            ];
+        {
+          home-manager.sharedModules = [
+            plasma-manager.homeModules.plasma-manager
+          ];
 
-            home-manager.users.lunya = {
-              home.stateVersion = "26.05";
-            };
-          }
-        ];
-      };
-      nixosConfigurations.lunya-lappie = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          home-manager.nixosModules.home-manager
-
-          ./modules/lappie
-          ./modules/workstation
-          ./hardware-configuration.nix
-
-          {
-            home-manager.sharedModules = [
-              plasma-manager.homeModules.plasma-manager
-            ];
-
-            home-manager.users.lunya = {
-              home.stateVersion = "26.05";
-            };
-          }
-        ];
-      };
+          home-manager.users.lunya = {
+            home.stateVersion = "26.05";
+          };
+        }
+      ];
     };
+    nixosConfigurations.lunya-lappie = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = { inherit inputs; };
+      modules = [
+        home-manager.nixosModules.home-manager
+
+        ./modules/lappie
+        ./modules/workstation
+        ./hardware-configuration.nix
+
+        {
+          home-manager.sharedModules = [
+            plasma-manager.homeModules.plasma-manager
+          ];
+
+          home-manager.users.lunya = {
+            home.stateVersion = "26.05";
+          };
+        }
+      ];
+    };
+  };
 }

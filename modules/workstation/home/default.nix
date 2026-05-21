@@ -11,6 +11,7 @@
     ./obs.nix
     ./packages.nix
     ./plasma.nix
+    ./vesktop.nix
   ];
 
   services.kdeconnect.enable = true;
