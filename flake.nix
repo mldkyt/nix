@@ -16,12 +16,18 @@
     };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }
   };
   outputs = inputs@{
       nixpkgs,
       home-manager,
       plasma-manager,
       spicetify-nix,
+      sops-nix,
       ...
     }:
     let
@@ -95,6 +101,7 @@
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [
+          sops-nix.nixosModules.sops
           ./modules/server
           ./hardware-configuration.nix
         ];

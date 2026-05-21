@@ -1,0 +1,10 @@
+
+keys:
+  - &lunya age1jxs9edjvq8k7ajsrf66gkna9qn6l3annn8pjeapc8y9xk4ncjs6qpjaljf
+  - &lunya-server age188z78xpzshvuhquvay37j546mlqvfeqnhgn5fp56atpxk83twv6sma4mls # UPDATE - this is VM key
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *lunya
+      - *lunya-server
