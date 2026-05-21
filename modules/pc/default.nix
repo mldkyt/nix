@@ -1,12 +1,13 @@
-{ config, pkgs, ... }:
+{
+  config,
+  ...
+}:
 
 {
-  imports = [
-    ./configuration.nix
-  ];
-
+  # Set a hostname unique in the household
   networking.hostName = "lunya-pc";
 
+  # Mount apps disk
   fileSystems."/mnt/Apps" = {
     device = "/dev/disk/by-uuid/025EC9DA5EC9C69F";
     fsType = "ntfs";
@@ -24,8 +25,8 @@
     enable = true;
   };
 
+  # Install nvidia drivers so the computer doesn't suck to use
   services.xserver.videoDrivers = [ "nvidia" ];
-
   hardware.nvidia = {
     modesetting.enable = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
@@ -35,6 +36,7 @@
     open = true;
   };
 
+  # Disable mouse acceleration for my main mouse
   home-manager.users.lunya.programs.plasma.input.mice = [
     {
       productId = "4082";
@@ -43,4 +45,10 @@
       accelerationProfile = "none";
     }
   ];
+
+  # No sleep
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
 }
