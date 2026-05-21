@@ -1,4 +1,3 @@
-#!/bin/bash
 
 sudo cp -r modules/ flake.nix /etc/nixos
 sudo nixos-rebuild switch --flake /etc/nixos#lunya-vm  --show-trace
