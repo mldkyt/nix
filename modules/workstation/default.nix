@@ -10,6 +10,7 @@
     ./gnupg.nix
     ./nix.nix
     ./podman.nix
+    ./nix-ld.nix
   ];
 
   # Bootloader.
@@ -36,6 +37,8 @@
     LC_TELEPHONE = "cs_CZ.UTF-8";
     LC_TIME = "cs_CZ.UTF-8";
   };
+
+  time.timeZone = "Europe/Prague";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lunya = {
