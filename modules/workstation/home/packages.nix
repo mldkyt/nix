@@ -33,6 +33,7 @@
     teams-for-linux
     kdePackages.kolourpaint
     strawberry
+    mission-center
   ];
 
 }
