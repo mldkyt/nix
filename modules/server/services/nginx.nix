@@ -7,5 +7,5 @@
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
     recommendedProxySettings = true;
-  }
+  };
 }
