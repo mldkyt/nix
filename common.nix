@@ -5,7 +5,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_7;
+  boot.kernelPackages = pkgs.linuxPackages_7_0;
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Prague";
   i18n.defaultLocale = "cs_CZ.UTF-8";
