@@ -14,17 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs = inputs@{
       nixpkgs,
       home-manager,
       plasma-manager,
-      sops-nix,
       ...
   }:
   let
@@ -77,7 +71,6 @@
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [
-        sops-nix.nixosModules.sops
         ./modules/server
         ./hardware-configuration.nix
       ];
