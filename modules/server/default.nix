@@ -16,4 +16,6 @@
     };
     oci-containers.backend = "podman";
   };
+
+  services.openssh.enable = true;
 }
