@@ -5,6 +5,7 @@
     ../../common.nix
     ./services/nginx.nix
     ./services/postgresql.nix
+    ./services/forgejo.nix
   ];
   networking.hostName = "lunya-server";
 
