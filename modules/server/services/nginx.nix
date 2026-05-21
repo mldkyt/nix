@@ -8,7 +8,7 @@
     recommendedOptimisation = true;
     recommendedProxySettings = true;
 
-    servers."git.lunya.pet" = {
+    virtualHosts."git.lunya.pet" = {
       extraConfig = ''
         client_max_body_size 1G;
       '';
@@ -17,7 +17,7 @@
         proxyPassWebsockets = true;
       };
     };
-    servers."_" = {
+    virtualHosts."_" = {
       extraConfig = ''
         client_max_body_size 1G;
       '';
