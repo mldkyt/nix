@@ -5,6 +5,4 @@
     ../../common.nix
   ];
   networking.hostName = "lunya-server";
-
-
 }
