@@ -11,6 +11,7 @@
     ./nix.nix
     ./podman.nix
     ./nix-ld.nix
+    ./testing.nix
   ];
 
   # Bootloader.
