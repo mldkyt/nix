@@ -5,6 +5,8 @@
     enable = true;
     backupDir = "/var/local/vaultwarden/backup";
     enviornmentFile = "/var/lib/vaultwarden/vaultwarden.env";
+    dbBackend = "postgres";
+    configurePostgres = true;
     config = {
       DOMAIN = "https://vault.lunya.pet";
       SIGNUPS_ALLOWED = false;
