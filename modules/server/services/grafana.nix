@@ -28,8 +28,8 @@
     port = 7004;
     settings.server = {
       root_url = "https://grafana.lunya.local";
-      security.secret_key._secret = "/run/secrets/grafana_secret_key";
     };
+    security.secret_key._secret = "/run/secrets/grafana_secret_key";
   };
 
   services.nginx = {
