@@ -21,5 +21,9 @@
     oci-containers.backend = "podman";
   };
 
+  sops = {
+    defaultSopsFile = ../../secrets/server.yaml;
+  };
+
   services.openssh.enable = true;
 }

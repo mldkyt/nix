@@ -1,6 +1,8 @@
 {...}:
 
 {
+  config.sops.secrets.grafana_secret_key = {};
+
   services.prometheus = {
     enable = true;
     scrapeConfigs = [
@@ -24,6 +26,7 @@
     port = 7004;
     settings.server = {
       root_url = "https://grafana.lunya.local";
+      secret_key._secret = "/run/secrets/grafana_secret_key";
     };
   };
 

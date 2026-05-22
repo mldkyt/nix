@@ -1,6 +1,6 @@
 keys:
   - &lunya age1jxs9edjvq8k7ajsrf66gkna9qn6l3annn8pjeapc8y9xk4ncjs6qpjaljf
-  - &lunya-server age188z78xpzshvuhquvay37j546mlqvfeqnhgn5fp56atpxk83twv6sma4mls # UPDATE - this is VM key
+  - &lunya-server age1ka0qqvxgkzz8zc4wvyzxzyuzwsv4hw5dulhnyffh4lyzf3p5kv9sk9rk6p # UPDATE - this is VM key
 creation_rules:
   - path_regex: secrets/[a-zA-Z0-9]+\.yaml$
     key_groups:
