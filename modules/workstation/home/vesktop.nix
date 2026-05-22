@@ -110,7 +110,13 @@
             remainInIdle = false;
           };
           NoTypingAnimation.enable = true;
-          ShowMeYourName.enabled = true;
+          ShowMeYourName = {
+            enabled = true;
+            displayNames = true;
+            inReplies = true;
+            mode = "nick-user";
+            friendNicknames = "always";
+          };
           ServerInfo.enabled = true;
           PermissionsViewer.enabled = true;
           VoiceChatDoubleClick.enabled = true;
