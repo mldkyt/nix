@@ -30,7 +30,7 @@
   services.nginx = {
     virtualHosts."grafana.lunya.local" = {
       locations."/" = {
-        proxyPass = "http://localhost:7004";
+        proxyPass = "http://127.0.0.1:7004";
         proxyWebsockets = true;
       };
     };
