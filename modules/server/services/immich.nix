@@ -9,7 +9,18 @@
     redis.enable = true;
     mediaLocation = "/mnt/fastdata/immich";
     # TODO change above in production (different drive)
+    host = "localhost";
     port = 7003;
+    database = {
+      enable = true;
+      createDB = true;
+    };
+    settings = {
+      newVersionCheck.enabled = false;
+      server = {
+        externalDomain = "http://immich.lunya.local";
+      };
+    };
   };
 
   services.nginx = {
