@@ -34,6 +34,7 @@
     kdePackages.kolourpaint
     strawberry
     mission-center
+    jetbrains.rider
   ];
 
 }

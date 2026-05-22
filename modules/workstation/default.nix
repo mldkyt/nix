@@ -11,6 +11,7 @@
     ./nix.nix
     ./podman.nix
     ./nix-ld.nix
+    ./virt.nix
   ];
 
   # Bootloader.
@@ -83,7 +84,7 @@
   services.displayManager.autoLogin.user = "lunya";
 
   # TODO get rid of VMware
-  virtualisation.vmware.host.enable = true;
+  # virtualisation.vmware.host.enable = true;
 
   networking.firewall = {
     allowedTCPPortRanges = [
