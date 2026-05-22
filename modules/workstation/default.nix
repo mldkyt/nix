@@ -12,6 +12,7 @@
     ./podman.nix
     ./nix-ld.nix
     ./virt.nix
+    ./temporary.nix
   ];
 
   # Bootloader.
@@ -76,6 +77,7 @@
     localNetworkGameTransfers.openFirewall = true;
     protontricks.enable = true;
   };
+  xdg.icons.fallbackCursorThemes = [ "breeze_cursors" ];
 
   fonts.fontconfig.enable = true;
 

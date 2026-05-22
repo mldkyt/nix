@@ -4,12 +4,12 @@
 
 {
   imports = [
+    ./packages
     ./chromium.nix
     ./git.nix
     ./gram.nix
     ./nix.nix
     ./obs.nix
-    ./packages.nix
     ./plasma.nix
     ./vesktop.nix
   ];
