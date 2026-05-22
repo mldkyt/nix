@@ -7,5 +7,6 @@
     ./multimedia.nix
     ./office.nix
     ./utility.nix
+    ./games.nix
   ];
 }
