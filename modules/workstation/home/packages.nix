@@ -9,7 +9,7 @@
     nixd
     steam
     kdePackages.partitionmanager
-    libreoffice
+    libreoffice-qt-fresh
     hyfetch
     fastfetch
     qbittorrent
