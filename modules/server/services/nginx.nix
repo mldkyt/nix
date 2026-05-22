@@ -9,5 +9,5 @@
     recommendedProxySettings = true;
   };
 
-  networking.firewall.allowedTCPPorts = [80];
+  networking.firewall.allowedTCPPorts = [ 80 ];
 }
