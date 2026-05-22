@@ -1,7 +1,9 @@
-{...}:
+{
+  ...
+}:
 
 {
-  config.sops.secrets.grafana_secret_key = {};
+  sops.secrets.grafana_secret_key = {};
 
   services.prometheus = {
     enable = true;
