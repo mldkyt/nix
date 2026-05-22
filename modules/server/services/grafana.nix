@@ -21,8 +21,8 @@
 
   services.grafana = {
     enable = true;
+    port = 7004;
     settings.server = {
-      http_port = 7004;
       root_url = "https://grafana.lunya.local";
     };
   };
