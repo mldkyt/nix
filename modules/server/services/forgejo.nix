@@ -10,7 +10,7 @@
     lfs.enable = true;
     settings = {
       server = {
-        DOMAIN = "git.lunya.pet";
+        DOMAIN = "git.lunya.local";
         ROOT_URL = "https://${config.services.forgejo.settings.server.DOMAIN}";
         SSH_PORT = 2000;
         HTTP_PORT = 7001;
@@ -19,7 +19,7 @@
   };
 
   services.nginx = {
-    virtualHosts."git.lunya.pet" = {
+    virtualHosts."git.lunya.local" = {
       extraConfig = ''
         client_max_body_size 1G;
       '';

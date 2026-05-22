@@ -13,7 +13,7 @@
   };
 
   services.nginx = {
-    virtualHosts."immich.lunya.pet" = {
+    virtualHosts."immich.lunya.local" = {
       locations."/" = {
         proxyPass = "http://127.0.0.1:7003";
         proxyWebsockets = true;

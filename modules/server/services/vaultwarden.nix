@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   services.vaultwarden = {
@@ -8,7 +8,7 @@
     dbBackend = "postgres";
     configurePostgres = true;
     config = {
-      DOMAIN = "https://vault.lunya.pet";
+      DOMAIN = "https://vault.lunya.local";
       SIGNUPS_ALLOWED = false;
 
       ROCKET_ADDRESS = "127.0.0.1";
@@ -24,7 +24,7 @@
   };
 
   services.nginx = {
-    virtualHosts."vault.lunya.pet" = {
+    virtualHosts."vault.lunya.local" = {
       extraConfig = ''
         client_max_body_size 1G;
       '';
