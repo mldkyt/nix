@@ -11,7 +11,6 @@
     ./nix.nix
     ./podman.nix
     ./nix-ld.nix
-    # ./testing.nix
   ];
 
   # Bootloader.
@@ -50,6 +49,11 @@
       "wheel"
       "docker"
     ];
+  };
+
+  sops = {
+    defaultSopsFile = ../../secrets/server.yaml;
+    age.keyFile = "/home/lunya/.config/sops/age/keys.txt";
   };
 
   # Home manager

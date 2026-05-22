@@ -38,11 +38,6 @@
         sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
 
-        {
-          sops.age.keyFile = "/home/lunya/.config/sops/age/keys.txt";
-          sops.defaultSopsFile = ./secrets.yaml;
-        }
-
         ./modules/workstation
         ./modules/pc
         ./hardware-configuration.nix
