@@ -14,11 +14,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs@{
       nixpkgs,
       home-manager,
       plasma-manager,
+      sops-nix,
       ...
   }:
   let
@@ -29,7 +35,13 @@
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [
+        sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
+
+        {
+          sops.age.keyFile = "/home/lunya/.config/sops/age/keys.txt";
+          sops.defaultSopsFile = ./secrets.yaml;
+        }
 
         ./modules/workstation
         ./modules/pc
@@ -50,6 +62,7 @@
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [
+        sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
 
         ./modules/lappie
@@ -71,6 +84,7 @@
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [
+        sops-nix.nixosModules.sops
         ./modules/server
         ./hardware-configuration.nix
       ];
