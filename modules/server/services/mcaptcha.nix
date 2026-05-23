@@ -11,8 +11,8 @@
     };
 
     templates."mcaptcha.env" = {
-      # owner = "mcaptcha";
-      # group = "mcaptcha";
+      owner = "mcaptcha";
+      group = "mcaptcha";
       content = ''
         MCAPTCHA_debug=false
         MCAPTCHA_commercial=false
@@ -47,16 +47,16 @@
     };
   };
 
-  # users.groups.mcaptcha = {};
-  # users.users.mcaptcha = {
-  #   isSystemUser = true;
-  #   group = "mcaptcha";
-  # };
+  users.groups.mcaptcha = {};
+  users.users.mcaptcha = {
+    isSystemUser = true;
+    group = "mcaptcha";
+  };
 
-  # services.redis.servers."mcaptcha" = {
-  #   enable = true;
-  #   user = "mcaptcha";
-  # };
+  services.redis.servers."mcaptcha" = {
+    enable = true;
+    user = "mcaptcha";
+  };
 
   # Install mCaptcha in a container as I'm not making a derivation
 
@@ -67,8 +67,8 @@
         config.sops.templates."mcaptcha.env".path
       ];
     };
-    mcaptcha_redis = {
-      image = "mcaptcha/cache:latest";
-    };
+    # mcaptcha_redis = {
+    #   image = "mcaptcha/cache:latest";
+    # };
   };
 }
