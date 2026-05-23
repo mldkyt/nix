@@ -41,4 +41,13 @@ in
       MemoryMax = "2G";
     };
   };
+
+  services.nginx = {
+    virtualHosts."sk.lunya.local" = {
+      locations."/" = {
+        proxyPass = "http://localhost:7006";
+        proxyWebsockets = true;
+      };
+    };
+  };
 }
