@@ -9,11 +9,11 @@ let
   mcweb = pkgs.callPackage ../lib/mcweb.nix {};
   mcstatus = pkgs.callPackage ../lib/mctracker.nix {};
 
-  mcstatusPython = pkgs.python312.withPackages [
+  mcstatusPython = pkgs.python312.withPackages (pypkgs: [
     mcstatus
-    pkgs.python312Packages.sqlalchemy
-    pkgs.python312Packages.psycopg2
-  ];
+    pypkgs.sqlalchemy
+    pypkgs.psycopg2
+  ]);
 in
 {
   # Minecraft server
