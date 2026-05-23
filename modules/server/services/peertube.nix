@@ -4,7 +4,7 @@
 }:
 
 {
-  sops.secret = {
+  sops = {
     secrets = {
       "email/host" = {};
       "email/username" = {};
