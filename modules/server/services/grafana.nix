@@ -1,5 +1,4 @@
 {
-  config,
   ...
 }:
 
@@ -30,7 +29,7 @@
     settings.server = {
       root_url = "https://grafana.lunya.local";
     };
-    settings.security.secret_key = "${config.sops.placeholder.grafana_secret_key}";
+    settings.security.secret_key._secret = "/run/secrets/grafana_secret_key";
   };
 
   services.nginx = {
