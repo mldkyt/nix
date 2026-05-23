@@ -23,7 +23,7 @@
         DATABASE_URL=postgres:///run/postgresql
         MCAPTCHA_database_POOL=4
 
-        MCAPTCHA_redis_URL=redis:///run/redis.sock
+        MCAPTCHA_redis_URL=redis:///run/redis/redis.sock
         MCAPTCHA_redis_POOL=4
 
         PORT=7000
@@ -79,7 +79,7 @@
       user = "mcaptcha:mcaptcha";
       volumes = [
         "/run/postgresql:/run/postgresql"
-        "/run/redis.sock:/run/redis-mcaptcha/redis.sock"
+        "/run/redis:/run/redis-mcaptcha"
       ];
     };
     # mcaptcha_redis = {
