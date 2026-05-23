@@ -4,7 +4,7 @@
   services.vaultwarden = {
     enable = true;
     backupDir = "/var/local/vaultwarden/backup";
-    enviornmentFile = "/var/lib/vaultwarden/vaultwarden.env";
+    environmentFile = "/var/lib/vaultwarden/vaultwarden.env";
     dbBackend = "postgres";
     configurePostgres = true;
     config = {
