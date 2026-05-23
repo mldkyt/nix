@@ -38,7 +38,6 @@ in
       version = true;
       mam = true;
       admin_adhoc = true;
-      admin_shell = true;
       groups = true;
       mimicking = true;
       motd = true;
