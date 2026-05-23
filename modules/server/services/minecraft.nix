@@ -109,16 +109,16 @@ in
     description = "Minecraft Server tracker";
     wantedBy = [ "multi-user.target" ];
     requires = [ "minecraft-server.service" ];
+    environment = {
+      DATABASE_URL = "postgresql://mcweb@localhost:5432/mcweb";
+      MINECRAFT_IP = "127.0.0.1:${toString config.minecraft-server.serverProperties.server-port}";
+    };
     serviceConfig = {
       User = "mcweb";
       Group = "mcweb";
       Exec = "${lib.getExe mcstatusPython} ${mcstatus}/main.py";
       Restart = "always";
       WorkingDirectory = config.users.users.mcweb.home;
-      Envrionment = {
-        DATABASE_URL = "postgresql://mcweb@localhost:5432/mcweb";
-        MINECRAFT_IP = "127.0.0.1:${toString config.minecraft-server.serverProperties.server-port}";
-      };
     };
   };
 }
