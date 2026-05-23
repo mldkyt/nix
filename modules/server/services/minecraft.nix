@@ -27,9 +27,9 @@
       difficulty = "hard";
       gamemode = "survival";
       max-players = 67;
-      motd = "Lunya's Community Server!";
+      motd = "Lunya's Community Server :3";
       allow-flight = true;
-      offline-mode = false;
+      online-mode = false;
       server-name = "meow";
       bug-report-week = "https\\://www.youtube.com/watch?\\=dQw4w9WgXcQ";
     };
