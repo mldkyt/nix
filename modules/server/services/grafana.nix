@@ -4,7 +4,9 @@
 }:
 
 {
-  sops.secrets.grafana_secret_key = {};
+  sops.secrets.grafana_secret_key = {
+    owner = config.systemd.services.grafana.servicesConfig.User;
+  };
 
   services.prometheus = {
     enable = true;
