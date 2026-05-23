@@ -58,6 +58,16 @@
     user = "mcaptcha";
   };
 
+  services.postgresql = {
+    ensureDatabases = [ "mcaptcha" ];
+    ensureUsers = [
+      {
+        name = "mcaptcha";
+        ensureDBOwnership = true;
+      }
+    ];
+  };
+
   # Install mCaptcha in a container as I'm not making a derivation
 
   virtualisation.oci-containers.containers = {
