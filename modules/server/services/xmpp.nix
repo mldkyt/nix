@@ -37,7 +37,6 @@ in
       admin_adhoc = true;
       groups = true;
       motd = true;
-      s2s_bidi = true;
       tombstones = true;
       watchregistrations = true;
       welcome = true;
