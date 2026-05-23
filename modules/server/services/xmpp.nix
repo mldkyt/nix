@@ -41,7 +41,6 @@ in
       tombstones = true;
       watchregistrations = true;
       welcome = true;
-      muc = true;
     };
 
     xmppComplianceSuite = true;
