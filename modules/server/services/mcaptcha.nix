@@ -74,7 +74,7 @@
       ];
     };
     mcaptcha_redis = {
-      image = "mcaptcha/mcaptcha-redis:latest";
+      image = "mcaptcha/cache:latest";
       networks = ["mcaptcha"];
     };
   };
