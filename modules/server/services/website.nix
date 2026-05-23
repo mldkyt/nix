@@ -39,8 +39,9 @@ in
 
   services.nginx = {
     virtualHosts."lunya.local" = {
-      locations."/" = {
-        root = websiteSrc;
+      root = websiteSrc;
+
+      locations."~ \\.php$" = {
         extraConfig = ''
           include ${pkgs.nginx}/conf/fastcgi_params;
           fastcgi_pass unix:${config.services.phpfpm.pools."website".socket};
