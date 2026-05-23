@@ -24,8 +24,14 @@ in
     ];
   };
 
+  users.groups."website" = {};
+  users.users."website" = {
+    isSystemUser = true;
+    group = "website";
+  };
+
   services.phpfpm.pools."website" = {
-    user = "nginx";
+    user = "website";
     settings = {
       "listen.owner" = "nginx";
       "listen.group" = "nginx";
@@ -37,7 +43,12 @@ in
       "pm.max_spare_servers" = 20;
       "pm.max_requests" = 500;
     };
-    phpEnv."PATH" = lib.makeBinPath [pkgs.php];
+    phpEnv = {
+      "PATH" = lib.makeBinPath [pkgs.php];
+      "MARIADB_HOST" = "localhost";
+      "MARIADB_USER" = "website";
+      "MARIADB_DATABASE" = "website";
+    };
   };
 
   services.nginx = {
