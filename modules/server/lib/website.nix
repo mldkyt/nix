@@ -22,8 +22,8 @@ stdenv.mkDerivation rec {
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out
-    cp -r $src/src/* $out
+    mkdir $out
+    cp -r $src/src $src/components $out
 
     runHook postInstall
   '';

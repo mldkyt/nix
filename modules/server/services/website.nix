@@ -42,7 +42,7 @@ in
 
   services.nginx = {
     virtualHosts."lunya.local" = {
-      root = websiteSrc;
+      root = "${websiteSrc}/src";
 
       locations."/" = {
         index = "index.php index.html";
@@ -53,7 +53,7 @@ in
         extraConfig = ''
           include ${pkgs.nginx}/conf/fastcgi_params;
           fastcgi_pass unix:${config.services.phpfpm.pools."website".socket};
-          fastcgi_param SCRIPT_FILENAME ${websiteSrc}$fastcgi_script_name;
+          fastcgi_param SCRIPT_FILENAME ${websiteSrc}/src$fastcgi_script_name;
         '';
       };
     };
