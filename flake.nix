@@ -20,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    inputs.continuwuity = {
+    continuwuity = {
       url = "git+https://forgejo.ellis.link/continuwuation/continuwuity";
       inputs.nixpkgs.follows = "nixpkgs";
     };
