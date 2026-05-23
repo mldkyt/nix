@@ -111,7 +111,7 @@ in
     requires = [ "minecraft-server.service" ];
     environment = {
       DATABASE_URL = "postgresql://mcweb@localhost:5432/mcweb";
-      MINECRAFT_IP = "127.0.0.1:${toString config.minecraft-server.serverProperties.server-port}";
+      MINECRAFT_IP = "127.0.0.1:${toString config.services.minecraft-server.serverProperties.server-port}";
     };
     serviceConfig = {
       User = "mcweb";
