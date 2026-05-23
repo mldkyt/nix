@@ -21,6 +21,7 @@ stdenv.mkDerivation rec {
   dontBuild = true;
 
   installPhase = ''
+    mkdir $out
     cp $src/mcstatus1/* $out
   '';
 
