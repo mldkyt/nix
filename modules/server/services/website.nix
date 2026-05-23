@@ -43,9 +43,9 @@ in
   services.nginx = {
     virtualHosts."lunya.local" = {
       root = websiteSrc;
-      index = ["index.php" "index.html"];
 
       locations."/" = {
+        index = ["index.php" "index.html"];
         tryFiles = "$uri $uri/ =404";
       };
 
