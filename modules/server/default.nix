@@ -9,6 +9,7 @@
     ./services/immich.nix
     ./services/grafana.nix
     ./services/vaultwarden.nix
+    ./services/matrix.nix
     ./packages.nix
   ];
   networking.hostName = "lunya-server";
