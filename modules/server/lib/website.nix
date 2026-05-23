@@ -1,6 +1,6 @@
 {
   stdenv,
-  fetchGitea,
+  fetchFromGitea,
   lib,
   ...
 }:
@@ -8,7 +8,7 @@
 stdenv.mkDerivation rec {
   rev = "710166f3b958e2d907564d2634ccb66117f7bb95";
 
-  src = fetchGitea {
+  src = fetchFromGitea {
     inherit rev;
     instance = "git.lunya.pet";
     owner = "lunya";
