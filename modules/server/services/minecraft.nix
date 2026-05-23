@@ -3,13 +3,14 @@
   ...
 }:
 
+let
+  minecraftServer = pkgs.callPackage ../lib/minecraft.nix {};
+in
 {
   services.minecraft-server = {
     enable = true;
 
-    package = (pkgs.purpur.overrideAttrs {
-      version = "1.21.11r2568";
-    });
+    package = minecraftServer;
     jvmOpts = "-Xms1G -Xmx10G";
     declarative = true;
     eula = true;
