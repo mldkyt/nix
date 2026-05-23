@@ -8,9 +8,8 @@
       type = "postgres";
     };
     lfs.enable = true;
+    appName = "Beyond coding. we kiss and snuggle ajd,,, jus- just g- ggirls,,,,,";
     settings = {
-      APP_NAME = "Beyond coding. we kiss and snuggle ajd,,, jus- just g- ggirls,,,,,";
-
       server = {
         DOMAIN = "git.lunya.local";
         ROOT_URL = "https://${config.services.forgejo.settings.server.DOMAIN}";
