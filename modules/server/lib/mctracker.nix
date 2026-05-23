@@ -25,12 +25,6 @@ stdenv.mkDerivation rec {
     cp $src/mcstatus1/* $out
   '';
 
-  buildDependencies = with pkgs.python312Packages; [
-    mcstatus
-    psycopg2
-    sqlalchemy
-  ];
-
   meta = {
     inherit pname version;
     description = "Minecraft server tracker";
