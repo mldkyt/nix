@@ -11,6 +11,7 @@
     ./services/vaultwarden.nix
     ./services/matrix.nix
     ./services/website.nix
+    ./services/iceshrimp.nix
     ./packages.nix
   ];
   networking.hostName = "lunya-server";
