@@ -3,6 +3,7 @@
 {
   imports = [
     ../../common.nix
+    ./containers.nix
     ./services/nginx.nix
     ./services/postgresql.nix
     ./services/forgejo.nix
@@ -16,15 +17,6 @@
     ./packages.nix
   ];
   networking.hostName = "lunya-server";
-
-  virtualisation = {
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      dockerSocket.enable = true;
-    };
-    oci-containers.backend = "podman";
-  };
 
   sops = {
     defaultSopsFile = ../../secrets/server.yaml;
