@@ -45,7 +45,6 @@ in
       tombstones = true;
       watchregistrations = true;
       welcome = true;
-      http_file_share = true;
       muc = true;
     };
 
