@@ -45,7 +45,7 @@ in
       root = websiteSrc;
 
       locations."/" = {
-        index = ["index.php" "index.html"];
+        index = "index.php index.html";
         tryFiles = "$uri $uri/ =404";
       };
 
