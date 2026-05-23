@@ -45,7 +45,7 @@ in
   };
 
   services.nginx = {
-    virtualHosts."lunya.pet" = {
+    virtualHosts."lunya.local" = {
       locations."/" = {
         root = websiteSrc;
         extraConfig = ''
