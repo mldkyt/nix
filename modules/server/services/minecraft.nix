@@ -1,6 +1,5 @@
 {
   pkgs,
-  fetchurl,
   ...
 }:
 
@@ -12,7 +11,7 @@
       pname = "purpur";
       version = "1.21.11r2568";
 
-      src = fetchurl {
+      src = pkgs.fetchurl {
         url = "https://api.purpurmc.org/v2/purpur/${
           builtins.replaceStrings [ "r" ] [ "/" ] version
         }/download";
