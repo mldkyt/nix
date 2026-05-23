@@ -67,7 +67,7 @@ in
     createHome = true;
   };
 
-  services.phpfpm.pools."mcwe" = {
+  services.phpfpm.pools."mcweb" = {
     user = "mcweb";
     settings = {
       "listen.owner" = "nginx";
