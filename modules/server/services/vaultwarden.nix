@@ -11,8 +11,8 @@
     };
 
     templates."vaultwarden.env" = {
-      owner = config.systemd.services.vaultwarden.serviceConfig.User;
-      group = config.systemd.services.vaultwarden.serviceConfig.Group;
+      owner = "vaultwarden";
+      group = "vaultwarden";
       content = ''
         ADMIN_TOKEN=${config.sops.placeholder."vaultwarden/admin_token"}
 
