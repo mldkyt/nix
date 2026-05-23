@@ -9,6 +9,8 @@
       "grafana.lunya.local"
       "m.lunya.local"
       "lunya.local"
+      "sk.lunya.local"
+      "pt.lunya.local"
     ];
   };
 }

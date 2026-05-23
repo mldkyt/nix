@@ -12,6 +12,7 @@
     ./services/matrix.nix
     ./services/website.nix
     ./services/iceshrimp.nix
+    ./services/peertube.nix
     ./packages.nix
   ];
   networking.hostName = "lunya-server";
