@@ -116,7 +116,7 @@ in
     serviceConfig = {
       User = "mcweb";
       Group = "mcweb";
-      Exec = "${lib.getExe mcstatusPython} ${mcstatus}/main.py";
+      ExecStart = "${lib.getExe mcstatusPython} ${mcstatus}/main.py";
       Restart = "always";
       WorkingDirectory = config.users.users.mcweb.home;
     };
