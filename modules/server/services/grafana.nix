@@ -5,7 +5,7 @@
 
 {
   sops.secrets.grafana_secret_key = {
-    owner = config.systemd.services.grafana.servicesConfig.User;
+    owner = config.systemd.services.grafana.serviceConfig.User;
   };
 
   services.prometheus = {
