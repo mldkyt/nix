@@ -14,7 +14,7 @@
     ./services/website.nix
     ./services/iceshrimp.nix
     ./services/peertube.nix
-    ./services/mcaptcha.nix
+    ./services/xmpp.nix
     ./packages.nix
   ];
   networking.hostName = "lunya-server";
