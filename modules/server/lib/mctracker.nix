@@ -7,13 +7,15 @@
 
 stdenv.mkDerivation rec {
   pname = "mctracker1";
-  rev = "";
+  rev = "c5330d5c1f7ad87c8c86488f981c213ce65f9dfe";
   version = "1.0.0+${rev}";
 
   src = pkgs.fetchFromGitea {
+    inherit rev;
     domain = "git.lunya.pet";
     owner = "lunya";
     repo = "mcweb";
+    sha256 = lib.fakeSha256;
   };
 
   dontBuild = true;
