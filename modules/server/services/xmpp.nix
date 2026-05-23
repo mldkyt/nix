@@ -64,14 +64,16 @@ in
       }
     ];
 
-    limits = {
-      c2s = {
-        rate = "10kb/s";
-      };
-      s2sin = {
-        rate = "30kb/s";
-      };
-    };
+    extraConfig = ''
+      limits = {
+          c2s = {
+              rate = "10kb/s";
+          };
+          s2sin = {
+              rate = "30kb/s";
+          };
+      }
+    '';
 
     httpPorts = [ 5280 ];
     httpInterfaces = [ "*" "::" ];
