@@ -1,5 +1,6 @@
 {
   pkgs,
+  fetchurl,
   ...
 }:
 
@@ -7,7 +8,16 @@
   services.minecraft-server = {
     enable = true;
 
-    package = pkgs.papermc;
+    package = pkgs.papermc.overrideAttrs (oldAttrs: rec {
+      pname = "purpur";
+      version = "1.21.11r2568";
+
+      src = fetchurl {
+        url = "https://api.purpurmc.org/v2/purpur/${
+          builtins.replaceStrings [ "r" ] [ "/" ] version
+        }/download";
+      };
+    });
     jvmOpts = "-Xms1G -Xmx10G";
     declarative = true;
     eula = true;
