@@ -49,9 +49,9 @@ in
       locations."/" = {
         root = websiteSrc;
         extraConfig = ''
-          fastcgi_split_path_infp ^(.+\.php)(/.+)$;
+          include ${pkgs.nginx}/conf/fastcgi_params;
           fastcgi_pass unix:${config.services.phpfpm.pools."website".socket};
-          include ${pkgs.nginx}/conf/fastcgi.conf;
+          fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         '';
       };
     };
