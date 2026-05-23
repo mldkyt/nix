@@ -10,6 +10,10 @@
       "email/username" = {};
       "email/password" = {};
       "email/port" = {};
+      "peertube_secret" = {
+        owner = "peertube";
+        group = "peertube";
+      };
     };
 
     templates."peertube.env" = {
@@ -39,6 +43,7 @@
     redis.createLocally = true;
     listenHttp = 7007;
     serviceEnvironmentFile = config.sops.templates."peertube.env".path;
+    secrets.secretsFile = config.sops.secrets."peertube_secret".path;
     dataDirs = [
       "/mnt/fastdata/peertube"
       # "/mnt/Data/server/peertube"
