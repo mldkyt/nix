@@ -45,7 +45,7 @@ in
   services.nginx = {
     virtualHosts."sk.lunya.local" = {
       locations."/" = {
-        proxyPass = "http://localhost:7006";
+        proxyPass = "http://127.0.0.1:7006";
         proxyWebsockets = true;
       };
     };
