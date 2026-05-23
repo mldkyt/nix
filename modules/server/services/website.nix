@@ -24,6 +24,7 @@ in
     ];
   };
 
+  users.groups."website" = {};
   users.users."website" = {
     group = "website";
     isSystemUser = true;
