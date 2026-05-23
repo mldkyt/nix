@@ -45,6 +45,7 @@
     serviceEnvironmentFile = config.sops.templates."peertube.env".path;
     secrets.secretsFile = config.sops.secrets."peertube_secret".path;
     dataDirs = [
+      "/var/tmp"
       "/mnt/fastdata/peertube"
       # "/mnt/Data/server/peertube"
     ];
