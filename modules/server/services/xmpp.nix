@@ -29,9 +29,6 @@ in
       vcard_legacy = true;
       cloud_notify = true;
       csi = true;
-      invites = true;
-      invites_adhoc = true;
-      invites_register = true;
       ping = true;
       time = true;
       uptime = true;
