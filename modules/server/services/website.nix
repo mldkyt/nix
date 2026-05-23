@@ -27,6 +27,9 @@ in
   services.phpfpm.pools."website" = {
     user = "nginx";
     settings = {
+      "listen.owner" = "nginx";
+      "listen.group" = "nginx";
+      "listen.mode" = "0660";
       "pm" = "dynamic";
       "pm.max_children" = 75;
       "pm.start_servers" = 10;
@@ -40,12 +43,17 @@ in
   services.nginx = {
     virtualHosts."lunya.local" = {
       root = websiteSrc;
+      index = ["index.php" "index.html"];
+
+      locations."/" = {
+        tryFiles = "$uri $uri/ =404";
+      };
 
       locations."~ \\.php$" = {
         extraConfig = ''
           include ${pkgs.nginx}/conf/fastcgi_params;
           fastcgi_pass unix:${config.services.phpfpm.pools."website".socket};
-          fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+          fastcgi_param SCRIPT_FILENAME ${websiteSrc}$fastcgi_script_name;
         '';
       };
     };
