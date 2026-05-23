@@ -19,6 +19,14 @@
           }
         ];
       }
+      {
+        job_name = "node";
+        static_configs = [
+          {
+            targets = [ "127.0.0.1:9100" ];
+          }
+        ];
+      }
     ];
     exporters.node = {
       enable = true;
