@@ -27,7 +27,6 @@ in
       smacks = true;
       vcard = true;
       vcard_legacy = true;
-      account_activity = true;
       cloud_notify = true;
       csi = true;
       invites = true;
