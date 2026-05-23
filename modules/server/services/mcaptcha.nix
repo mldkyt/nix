@@ -79,7 +79,7 @@
       user = "mcaptcha:mcaptcha";
       volumes = [
         "/run/postgresql:/run/postgresql"
-        "/run/redis:/run/redis-mcaptcha"
+        "/run/redis-mcaptcha/redis.sock:/run/redis.sock"
       ];
     };
     # mcaptcha_redis = {
