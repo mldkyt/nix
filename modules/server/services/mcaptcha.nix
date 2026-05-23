@@ -66,16 +66,9 @@
       environmentFiles = [
         config.sops.templates."mcaptcha.env".path
       ];
-      volumes = [
-        "/run/redis-mcaptcha:/run/redis-mcaptcha"
-      ];
-      networks = [
-        "mcaptcha"
-      ];
     };
     mcaptcha_redis = {
       image = "mcaptcha/cache:latest";
-      networks = ["mcaptcha"];
     };
   };
 }
