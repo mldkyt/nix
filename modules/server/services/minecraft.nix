@@ -15,6 +15,7 @@
         url = "https://api.purpurmc.org/v2/purpur/${
           builtins.replaceStrings [ "r" ] [ "/" ] version
         }/download";
+        sha256 = "sha256-7hmVEb8Klw7oRZ/jo1FwP+w3KT8AvC3hxct0bH5KzDQ";
       };
     });
     jvmOpts = "-Xms1G -Xmx10G";
