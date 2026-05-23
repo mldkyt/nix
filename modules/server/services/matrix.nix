@@ -7,7 +7,7 @@
     settings = {
       global = {
         server_name = "lunya.pet";
-        port = 7005;
+        port = [ 7005 ];
         max_request_size = 100000000;
 
         allow_registration = false;
