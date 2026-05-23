@@ -24,15 +24,8 @@ in
     ];
   };
 
-  users.groups."website" = {};
-  users.users."website" = {
-    group = "website";
-    isSystemUser = true;
-  };
-
   services.phpfpm.pools."website" = {
-    user = "website";
-    group = "website";
+    user = "nginx";
     settings = {
       "pm" = "dynamic";
       "pm.max_children" = 75;
