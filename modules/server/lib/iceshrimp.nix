@@ -9,7 +9,7 @@
   vips,
 }:
 let
-  rev = "8a7040e6ee270fb9b327c06642b37b3fd5356c6c";
+  rev = "611d31e89e3a876c5fe43272e91bb20758a401cc";
 in
 buildDotnetModule {
   pname = "iceshrimp.net";
@@ -20,7 +20,7 @@ buildDotnetModule {
     repo = "Iceshrimp.NET";
     inherit rev;
     forceFetchGit = true;
-    hash = lib.fakeSha256;
+    sha256 = "sha256-lmqXtAZ/4cahER7h+WlSPCT1vTOMUHbqh8/+FuimJa8=";
   };
   dotnet-sdk = dotnetCorePackages.sdk_10_0;
   dotnet-runtime = dotnetCorePackages.aspnetcore_10_0;
