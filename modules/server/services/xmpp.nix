@@ -54,19 +54,29 @@ in
       }
     ];
 
+    virtualHosts = {
+      "lunya" = {
+        domain = "${mainDomainName}";
+        enabled = true;
+      };
+      "the_wired" = {
+        domain = "${theWiredDomainName}";
+        enabled = true;
+      };
+    };
+
     extraConfig = ''
       limits = {
-          c2s = {
-              rate = "10kb/s";
-          };
-          s2sin = {
-              rate = "30kb/s";
-          };
+        c2s = {
+          rate = "10kb/s";
+        };
+        s2sin = {
+          rate = "30kb/s";
+        };
       }
     '';
 
     httpPorts = [ 5280 ];
     httpInterfaces = [ "*" "::" ];
-    httpFileShare.domain = "xmpp-files.lunya.pet";
   };
 }
