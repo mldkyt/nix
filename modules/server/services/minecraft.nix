@@ -19,7 +19,7 @@
       max-players = 67;
       motd = "Lunya's Community Server!";
       allow-flight = true;
-      offline-mode = true;
+      offline-mode = false;
       server-name = "meow";
       bug-report-week = "https\\://www.youtube.com/watch?\\=dQw4w9WgXcQ";
     };
