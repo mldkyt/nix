@@ -1,9 +1,20 @@
 {
   pkgs,
+  config,
+  lib,
   ...
 }:
 
+let
+  mcweb = pkgs.callPackage ../lib/mcweb.nix {};
+  mcstatus = pkgs.callPackage ../lib/mctracker.nix {};
+
+  mcstatusPython = pkgs.python312.withPackages( with pkgs.python312Packages; [
+
+  ]);
+in
 {
+  # Minecraft server
   services.minecraft-server = {
     enable = true;
 
@@ -32,6 +43,83 @@
       online-mode = false;
       server-name = "meow";
       bug-report-week = "https\\://www.youtube.com/watch?\\=dQw4w9WgXcQ";
+    };
+  };
+
+  # Website
+  services.postgresql = {
+    ensureDatabases = [ "mcweb" ];
+    ensureUsers = [
+      {
+        name = "mcweb";
+        ensureDBOwnership = true;
+      }
+    ];
+  };
+
+  users.groups.mcweb = {};
+  users.users.mcweb = {
+    isSystemUser = true;
+    group = "mcweb";
+    home = "/var/lib/mcweb";
+    createHome = true;
+  };
+
+  services.phpfpm.pools."website" = {
+    user = "website";
+    settings = {
+      "listen.owner" = "nginx";
+      "listen.group" = "nginx";
+      "listen.mode" = "0660";
+      "pm" = "dynamic";
+      "pm.max_children" = 75;
+      "pm.start_servers" = 10;
+      "pm.min_spare_servers" = 5;
+      "pm.max_spare_servers" = 20;
+      "pm.max_requests" = 500;
+    };
+    phpEnv = {
+      "PATH" = lib.makeBinPath [pkgs.php];
+      "MARIADB_HOST" = "localhost";
+      "MARIADB_USER" = "website";
+      "MARIADB_DATABASE" = "website";
+    };
+  };
+
+  services.nginx = {
+    virtualHosts."lunya.local" = {
+      root = "${mcweb}";
+
+      locations."/" = {
+        index = "index.php index.html";
+        tryFiles = "$uri $uri/ =404";
+      };
+
+      locations."~ \\.php$" = {
+        extraConfig = ''
+          include ${pkgs.nginx}/conf/fastcgi_params;
+          fastcgi_pass unix:${config.services.phpfpm.pools."website".socket};
+          fastcgi_param SCRIPT_FILENAME ${mcweb}$fastcgi_script_name;
+        '';
+      };
+    };
+  };
+
+  # Minecraft Tracker
+  systemd.services.mcstatus = {
+    description = "Minecraft Server tracker";
+    wantedBy = [ "multi-user.target" ];
+    requires = [ "minecraft-server.service" ];
+    serviceConfig = {
+      User = "mcweb";
+      Group = "mcweb";
+      Exec = "${lib.getExe mcstatusPython} ${mcstatus}/main.py";
+      Restart = "always";
+      WorkingDirectory = config.users.users.mcweb.home;
+      Envrionment = {
+        DATABASE_URL = "postgresql://mcweb@localhost:5432/mcweb";
+        MINECRAFT_IP = "127.0.0.1:${toString config.minecraft-server.serverProperties.server-port}";
+      };
     };
   };
 }
