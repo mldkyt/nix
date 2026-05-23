@@ -5,6 +5,16 @@ let
   theWiredDomainName = "the-wired.club";
 in
 {
+  services.postgresql = {
+    ensureDatabases = [ "prosody" ];
+    ensureUsers = [
+      {
+        name = "prosody";
+        ensureDBOwnership = true;
+      }
+    ];
+  };
+
   services.prosody = {
     enable = true;
     admins = [ "lunya@${mainDomainName}" "lain@${theWiredDomainName}" ];
@@ -73,6 +83,13 @@ in
         s2sin = {
           rate = "30kb/s";
         };
+      }
+
+      sql = {
+        driver = "PostgreSQL",
+        database = "prosody",
+        username = "prosody",
+        host = "/run/postgresql"
       }
     '';
 
