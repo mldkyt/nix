@@ -24,8 +24,10 @@ in
     ];
   };
 
-  users.users."website".isSystemUser = true;
-  users.groups."website".members = "website";
+  users.users."website" = {
+    group = "website";
+    isSystemUser = true;
+  };
 
   services.phpfpm.pools."website" = {
     user = "website";
