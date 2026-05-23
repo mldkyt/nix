@@ -15,6 +15,7 @@
     ./services/iceshrimp.nix
     ./services/peertube.nix
     ./services/xmpp.nix
+    ./services/minecraft.nix
     ./packages.nix
   ];
   networking.hostName = "lunya-server";
