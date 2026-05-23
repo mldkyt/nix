@@ -36,7 +36,6 @@ in
       mam = true;
       admin_adhoc = true;
       groups = true;
-      mimicking = true;
       motd = true;
       s2s_bidi = true;
       tombstones = true;
