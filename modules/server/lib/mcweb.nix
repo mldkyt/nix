@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
     domain = "git.lunya.pet";
     owner = "lunya";
     repo = "mcweb";
-    sha256 = lib.fakeSha256;
+    sha256 = "9RFGAeAuNAvK8igD1kHU0QrQy6VPJ+L2izhfbJDJS+A=";
   };
 
   dontBuild = true;
