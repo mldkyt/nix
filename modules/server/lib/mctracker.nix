@@ -1,10 +1,11 @@
 {
   pkgs,
   lib,
+  stdenv,
   ...
 }:
 
-pkgs.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "mctracker1";
   rev = "";
   version = "1.0.0+${rev}";
