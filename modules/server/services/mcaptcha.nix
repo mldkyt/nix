@@ -20,10 +20,10 @@
         MCAPTCHA_allow_registration=false
         MCAPTCHA_allow_demo=false
 
-        DATABASE_URL=postgres://mcaptcha@postgres:5432/mcaptcha
+        DATABASE_URL=postgres:///run/postgresql
         MCAPTCHA_database_POOL=4
 
-        MCAPTCHA_redis_URL=redis://127.0.0.1:6001
+        MCAPTCHA_redis_URL=redis:///run/redis.sock
         MCAPTCHA_redis_POOL=4
 
         PORT=7000
@@ -65,6 +65,11 @@
       image = "mcaptcha/mcaptcha:latest";
       environmentFiles = [
         config.sops.templates."mcaptcha.env".path
+      ];
+      user = "mcaptcha:mcaptcha";
+      volumes = [
+        "/run/postgresql:/run/postgresql"
+        "/run/redis.sock:/run/redis-mcaptcha/redis.sock"
       ];
     };
     # mcaptcha_redis = {
