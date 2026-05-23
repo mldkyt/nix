@@ -10,7 +10,7 @@
     package = (pkgs.purpur.overrideAttrs {
       version = "1.21.11r2568";
     });
-    jvmOpts = "-Xms1G -Xmx10G -XX:+UseG1GC -XX:+CMSIncrementalPacing -XX:+CMSClassUnloadingEnabled -XX:ParallelGCThreads=2 -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10";
+    jvmOpts = "-Xms1G -Xmx10G";
     declarative = true;
     eula = true;
     openFirewall = true;
