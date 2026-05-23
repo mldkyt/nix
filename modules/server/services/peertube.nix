@@ -6,32 +6,11 @@
 {
   sops = {
     secrets = {
-      "email/host" = {};
-      "email/username" = {};
       "email/password" = {};
-      "email/port" = {};
       "peertube_secret" = {
         owner = "peertube";
         group = "peertube";
       };
-    };
-
-    templates."peertube.env" = {
-      owner = "peertube";
-      group = "peertube";
-
-      content = ''
-        PEERTUBE_TRUST_PROXY=["127.0.0.1", "172.18.0.0/16", "192.168.0.0/16", "10.0.0.0/8"]
-
-        PEERTUBE_SMTP_USERNAME=${config.sops.placeholder."email/username"}
-        PEERTUBE_SMTP_PASSWORD=${config.sops.placeholder."email/password"}
-        PEERTUBE_SMTP_HOSTNAME=${config.sops.placeholder."email/host"}
-        PEERTUBE_SMTP_PORT=${config.sops.placeholder."email/port"}
-        PEERTUBE_SMTP_FROM=peertube@lunya.pet
-        PEERTUBE_SMTP_TLS=false
-        PEERTUBE_SMTP_DISABLE_STARTTLS=false
-        PEERTUBE_ADMIN_EMAIL=lunya@murena.io
-      '';
     };
   };
 
@@ -42,7 +21,7 @@
     database.createLocally = true;
     redis.createLocally = true;
     listenHttp = 7007;
-    serviceEnvironmentFile = config.sops.templates."peertube.env".path;
+    listenWeb = 7008;
     secrets.secretsFile = config.sops.secrets."peertube_secret".path;
     dataDirs = [
       "/var/tmp"
@@ -88,6 +67,15 @@
         # well_known = "/mnt/fastdata/peertube/well-known/";
         # uploads = "/mnt/fastdata/peertube/uploads/";
       };
+      smtp = {
+        hostname = "lunya.pet";
+        port = 587;
+        username = "svc@lunya.pet";
+        tls = false;
+        disable_starttls = false;
+        from_address = "peertube@lunya.pet";
+      };
     };
+    smtp.passwordFile = config.sops.secrets."email/password".path;
   };
 }
