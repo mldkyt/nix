@@ -67,8 +67,8 @@ in
     createHome = true;
   };
 
-  services.phpfpm.pools."website" = {
-    user = "website";
+  services.phpfpm.pools."mcwe" = {
+    user = "mcweb";
     settings = {
       "listen.owner" = "nginx";
       "listen.group" = "nginx";
@@ -82,14 +82,11 @@ in
     };
     phpEnv = {
       "PATH" = lib.makeBinPath [pkgs.php];
-      "MARIADB_HOST" = "localhost";
-      "MARIADB_USER" = "website";
-      "MARIADB_DATABASE" = "website";
     };
   };
 
   services.nginx = {
-    virtualHosts."lunya.local" = {
+    virtualHosts."mc.lunya.local" = {
       root = "${mcweb}";
 
       locations."/" = {
@@ -100,7 +97,7 @@ in
       locations."~ \\.php$" = {
         extraConfig = ''
           include ${pkgs.nginx}/conf/fastcgi_params;
-          fastcgi_pass unix:${config.services.phpfpm.pools."website".socket};
+          fastcgi_pass unix:${config.services.phpfpm.pools."mcweb".socket};
           fastcgi_param SCRIPT_FILENAME ${mcweb}$fastcgi_script_name;
         '';
       };
