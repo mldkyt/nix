@@ -78,5 +78,8 @@ in
 
     httpPorts = [ 5280 ];
     httpInterfaces = [ "*" "::" ];
+    httpFileShare = {
+      domain = "xmpp-files.lunya.pet";
+    };
   };
 }
