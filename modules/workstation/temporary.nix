@@ -7,6 +7,8 @@
       "immich.lunya.local"
       "vault.lunya.local"
       "grafana.lunya.local"
+      "m.lunya.local"
+      "lunya.local"
     ];
   };
 }
