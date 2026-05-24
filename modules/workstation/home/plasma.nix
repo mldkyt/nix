@@ -49,5 +49,7 @@
         "Switch to Next Keyboard Layout" = "Meta+Space,Meta+Alt+K,Switch to Next Keyboard Layout";
       };
     };
+    kscreenlocker.appearance.wallpaper = ../lib/wallpaper.jpg;
+    workspace.wallpaper = ../lib/wallpaper.jpg;
   };
 }
