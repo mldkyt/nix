@@ -30,7 +30,12 @@ from setuptools import setup
 setup(
   name="mcstatus1",
   version="1.0",
-  scripts=["main.py"],
+  py_modules=["main"]
+  entry_points={
+    "console_scripts": [
+      "mcstatus1=main:main",
+    ],
+  },
 )
 EOF
   '';
