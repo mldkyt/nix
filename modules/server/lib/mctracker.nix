@@ -18,7 +18,6 @@ pkgs.python312Packages.buildPythonApplication rec {
   }}/mcstatus1";
 
   propagatedBuildInputs = with pkgs.python312Packages; [
-    setuptools
     mcstatus
     psycopg2
     sqlalchemy
@@ -38,6 +37,7 @@ EOF
 
   pyproject = true;
   build-system = with pkgs.python312Packages; [ setuptools ];
+  format = "pyproject";
 
   meta = {
     inherit pname version;
