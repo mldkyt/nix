@@ -11,6 +11,7 @@
       "lunya.local"
       "sk.lunya.local"
       "pt.lunya.local"
+      "mc.lunya.local"
     ];
   };
 }

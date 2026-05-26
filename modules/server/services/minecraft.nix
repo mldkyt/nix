@@ -8,12 +8,6 @@
 let
   mcweb = pkgs.callPackage ../lib/mcweb.nix {};
   mcstatus = pkgs.callPackage ../lib/mctracker.nix {};
-
-  mcstatusPython = pkgs.python312.withPackages (pypkgs: [
-    mcstatus
-    pypkgs.sqlalchemy
-    pypkgs.psycopg2
-  ]);
 in
 {
   # Minecraft server
@@ -116,7 +110,7 @@ in
     serviceConfig = {
       User = "mcweb";
       Group = "mcweb";
-      ExecStart = "${lib.getExe mcstatusPython} ${mcstatus}/main.py";
+      ExecStart = lib.getExe mcstatus;
       Restart = "always";
       WorkingDirectory = config.users.users.mcweb.home;
     };
