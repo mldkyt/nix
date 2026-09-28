@@ -13,6 +13,7 @@
     ./packages.nix
     ./plasma.nix
     ./vesktop.nix
+    ./easyeffects.nix
   ];
 
   services.kdeconnect.enable = true;

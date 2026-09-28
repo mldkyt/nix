@@ -37,6 +37,7 @@
     vorta
     spotify
     oversteer
+    easyeffects
   ];
 
 }
