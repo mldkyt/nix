@@ -10,7 +10,7 @@
     ./gnupg.nix
     ./nix.nix
     ./podman.nix
-    # ./nix-ld.nix
+    ./nix-ld.nix
   ];
 
   # Bootloader.
