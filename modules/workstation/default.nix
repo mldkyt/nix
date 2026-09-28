@@ -80,6 +80,8 @@
   # TODO get rid of VMware
   virtualisation.vmware.host.enable = true;
 
+  zramSwap.enable = true;
+
   networking.firewall = {
     allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # kde connect
