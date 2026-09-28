@@ -39,6 +39,7 @@
     oversteer
     easyeffects
     tor-browser
+    php
   ];
 
 }

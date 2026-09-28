@@ -6,7 +6,7 @@
 
   programs.zed-editor = {
     enable = true;
-    extensions = ["nix" "toml" "rust" "catppuccin" "catppuccin-icons" "emmet"];
+    extensions = ["nix" "toml" "rust" "php" "catppuccin" "catppuccin-icons" "emmet"];
     userSettings = {
       telemetry = {
         diagnostics = false;
