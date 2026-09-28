@@ -25,7 +25,7 @@
     system = "x86_64-linux";
   in
   {
-    nixosConfigurations.lunya-pc = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.mldkyt-pc = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [
@@ -40,13 +40,13 @@
             plasma-manager.homeModules.plasma-manager
           ];
 
-          home-manager.users.lunya = {
+          home-manager.users.mldkyt = {
             home.stateVersion = "26.05";
           };
         }
       ];
     };
-    nixosConfigurations.lunya-lappie = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.mldkyt-lappie = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [
@@ -61,7 +61,7 @@
             plasma-manager.homeModules.plasma-manager
           ];
 
-          home-manager.users.lunya = {
+          home-manager.users.mldkyt = {
             home.stateVersion = "26.05";
           };
         }

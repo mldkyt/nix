@@ -13,9 +13,9 @@
         defaultBranch = "main";
       };
       user = {
-        name = "Lunya";
-        email = "lunya@murena.io";
-        signingKey = "458591AD4C4C0233"; # needs import
+        name = "mldkyt";
+        email = "mldkyt@mldkyt.com";
+        signingKey = "B60E07AE854F3F09"; # needs import
       };
       tag.gpgSign = true;
       commit.gpgSign = true;

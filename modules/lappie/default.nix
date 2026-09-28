@@ -4,7 +4,7 @@
 }:
 
 {
-  networking.hostName = "lunya-lappie";
+  networking.hostName = "mldkyt-lappie";
 
   hardware.graphics = {
     enable = true;

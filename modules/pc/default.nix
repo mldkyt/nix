@@ -5,7 +5,7 @@
 
 {
   # Set a hostname unique in the household
-  networking.hostName = "lunya-pc";
+  networking.hostName = "mldkyt-pc";
 
   # Mount apps disk
   fileSystems."/mnt/Apps" = {
@@ -37,7 +37,7 @@
   };
 
   # Disable mouse acceleration for my main mouse
-  home-manager.users.lunya.programs.plasma.input.mice = [
+  home-manager.users.mldkyt.programs.plasma.input.mice = [
     {
       productId = "4082";
       vendorId = "046d";

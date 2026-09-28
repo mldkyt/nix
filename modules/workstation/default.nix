@@ -41,9 +41,9 @@
   time.timeZone = "Europe/Prague";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.lunya = {
+  users.users.mldkyt = {
     isNormalUser = true;
-    description = "Lunya";
+    description = "MLDKYT";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -53,7 +53,7 @@
 
   # Home manager
   home-manager.backupFileExtension = "backup";
-  home-manager.users.lunya =
+  home-manager.users.mldkyt =
     { ... }:
     {
       # Load config from home folder
@@ -75,7 +75,7 @@
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "lunya";
+  services.displayManager.autoLogin.user = "mldkyt";
 
   # TODO get rid of VMware
   virtualisation.vmware.host.enable = true;

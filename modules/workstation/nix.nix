@@ -16,6 +16,6 @@
   # Trusted users
   nix.settings.trusted-users = [
     "root"
-    "lunya"
+    "mldkyt"
   ];
 }

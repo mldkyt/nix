@@ -9,7 +9,7 @@
 
   nix.settings.trusted-users = [
     "root"
-    "lunya"
+    "mldkyt"
   ];
 
   nix.gc = {
