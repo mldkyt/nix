@@ -4,7 +4,7 @@
 
 {
   imports = [
-    ./chromium.nix
+    ./firefox.nix
     ./git.nix
     ./gram.nix
     ./nix.nix
