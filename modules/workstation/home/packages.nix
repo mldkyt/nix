@@ -38,6 +38,7 @@
     spotify
     oversteer
     easyeffects
+    tor-browser
   ];
 
 }
