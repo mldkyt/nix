@@ -7,7 +7,7 @@
   imports = [
     ./firefox.nix
     ./git.nix
-    ./gram.nix
+    ./zed.nix
     ./nix.nix
     ./obs.nix
     ./packages.nix
