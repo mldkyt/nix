@@ -35,6 +35,7 @@
     strawberry
     mission-center
     vorta
+    spotify
   ];
 
 }
