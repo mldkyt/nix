@@ -9,16 +9,16 @@
 
   # Mount apps disk
   fileSystems."/mnt/Apps" = {
-    device = "/dev/disk/by-uuid/025EC9DA5EC9C69F";
-    fsType = "ntfs";
-    options = [
-      "rw"
-      "exec"
-      "mask=000"
-      "uid=1000"
-      "gid=1000"
-      "nofail"
-    ];
+    device = "/dev/disk/by-uuid/5a9c88a5-a838-42d2-947f-911315f9b5c4";
+    fsType = "ext4";
+    # options = [
+    #   "rw"
+    #   "exec"
+    #   "mask=000"
+    #   "uid=1000"
+    #   "gid=1000"
+    #   "nofail"
+    # ];
   };
 
   hardware.graphics = {
