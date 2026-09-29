@@ -16,6 +16,8 @@
       "catppuccin-icons"
       "emmet"
       "discord-presence"
+      "git-firefly"
+      "prisma"
     ];
     extraPackages = with pkgs; [
       nixd
