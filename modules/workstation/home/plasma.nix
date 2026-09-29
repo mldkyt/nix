@@ -8,7 +8,6 @@
     enable = true;
 
     workspace = {
-      lookAndFeel = "catppuccin-mocha-mauve";
       colorScheme = "CatppuccinMochaMauve";
       iconTheme = "Papirus-Dark";
       cursor = {
