@@ -13,6 +13,24 @@
         id = 0;
         name = "default";
         isDefault = true;
+
+        extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          ublock-origin-upstream
+          enhancer-for-youtube
+          bypass-paywalls-clean
+          firefox-color
+          bitwarden
+          clearurls
+          h264ify
+          privacy-badger
+          youtube-nonstop
+          consent-o-matic
+          tab-reloader
+          sponsorblock
+          dearrow
+        ];
+        extensions.force = true;
+
         settings = {
           "browser.ml.enable" = false;
           "browser.ai.control.default" = "blocked";
@@ -50,9 +68,12 @@
           "toolkit.telemetry.shutdownPingSender.enabled" = false;
           "toolkit.telemetry.updatePing.enabled" = false;
           "browser.ping-centre.telemetry" = false;
+          "extensions.autoDisableScopes" = 0;
         };
       };
     };
   };
+
+  catppuccin.firefox.profiles.default.enable = true;
 
 }

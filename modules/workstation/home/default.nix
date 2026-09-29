@@ -14,6 +14,7 @@
     ./plasma.nix
     ./vesktop.nix
     ./easyeffects.nix
+    ./opencode.nix
   ];
 
   services.kdeconnect.enable = true;
@@ -26,6 +27,15 @@
     size = 24;
     gtk.enable = true;
     x11.enable = true;
+  };
+
+  catppuccin = {
+    enable = true;
+    autoEnable = true;
+    flavor = "mocha";
+    accent = "mauve";
+
+    kvantum.enable = false;
   };
 
   home.stateVersion = "26.05";

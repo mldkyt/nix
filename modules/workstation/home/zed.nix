@@ -12,8 +12,6 @@
       "toml"
       "rust"
       "php"
-      "catppuccin"
-      "catppuccin-icons"
       "emmet"
       "discord-presence"
       "git-firefly"
@@ -49,8 +47,6 @@
       project_panel.dock = "left";
       git_panel.dock = "left";
       collaboration_panel.button = false;
-      theme = "Catppuccin Mocha";
-      icon_theme = "Catppuccin Mocha";
       format_on_save = "on";
     };
   };

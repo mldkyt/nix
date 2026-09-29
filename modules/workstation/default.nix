@@ -84,14 +84,28 @@
 
   networking.firewall = {
     allowedTCPPortRanges = [
-      { from = 1714; to = 1764; } # kde connect
+      {
+        from = 1714;
+        to = 1764;
+      } # kde connect
     ];
     allowedUDPPortRanges = [
-      { from = 1714; to = 1764; } # kde connect
+      {
+        from = 1714;
+        to = 1764;
+      } # kde connect
     ];
     allowedTCPPorts = [ 53317 ];
     allowedUDPPorts = [ 53317 ];
   };
+
+  environment.systemPackages = [
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      font = "Noto Sans";
+      accent = "mauve";
+    })
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

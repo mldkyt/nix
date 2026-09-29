@@ -8,7 +8,9 @@
     enable = true;
 
     workspace = {
-      lookAndFeel = "org.kde.breezedark.desktop";
+      lookAndFeel = "catppuccin-mocha-mauve";
+      colorScheme = "CatppuccinMochaMauve";
+      iconTheme = "Papirus-Dark";
       cursor = {
         cursorFeedback = "None";
       };
@@ -35,7 +37,6 @@
       };
     };
     configFile."kdeglobals" = {
-      "General"."AccentColor" = "255,170,255";
       "KDE"."AnimationDurationFactor" = "0.5";
     };
     configFile."spectaclerc" = {

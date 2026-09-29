@@ -41,6 +41,12 @@
     tor-browser
     php
     localsend
+    (catppuccin-kde.override {
+      flavour = [ "mocha" ];
+      accents = [ "mauve" ];
+      winDecStyles = [ "modern" ];
+    })
+    catppuccin-papirus-folders
   ];
 
 }
