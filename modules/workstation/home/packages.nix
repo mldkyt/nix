@@ -40,6 +40,7 @@
     easyeffects
     tor-browser
     php
+    localsend
   ];
 
 }
