@@ -46,7 +46,6 @@
       accents = [ "mauve" ];
       winDecStyles = [ "modern" ];
     })
-    catppuccin-papirus-folders
   ];
 
 }
