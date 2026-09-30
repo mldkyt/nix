@@ -53,6 +53,7 @@
 
   # Home manager
   home-manager.backupFileExtension = "backup";
+  home-manager.backupCommand = "${pkgs.trash-cli}/bin/trash";
   home-manager.users.mldkyt =
     { ... }:
     {
