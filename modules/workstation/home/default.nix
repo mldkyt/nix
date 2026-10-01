@@ -46,6 +46,17 @@
       "x-scheme-handler/https" = "firefox.desktop";
       "x-scheme-handler/about" = "firefox.desktop";
       "x-scheme-handler/unknown" = "firefox.desktop";
+
+      "video/mp4" = "vlc.desktop";
+      "video/x-matroska" = "vlc.desktop";
+      "video/webm" = "vlc.desktop";
+      "video/mpeg" = "vlc.desktop";
+      "video/x-msvideo" = "vlc.desktop";
+      "video/ogg" = "vlc.desktop";
+      "video/quicktime" = "vlc.desktop";
+      "video/x-flv" = "vlc.desktop";
+      "video/3gpp" = "vlc.desktop";
+      "video/3gpp2" = "vlc.desktop";
     };
   };
 
