@@ -47,6 +47,8 @@
       winDecStyles = [ "modern" ];
     })
     catppuccin-papirus-folders
+    intellij-idea
+    pycharm
   ];
 
 }
