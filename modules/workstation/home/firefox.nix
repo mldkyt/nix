@@ -21,7 +21,6 @@
           firefox-color
           bitwarden
           clearurls
-          h264ify
           privacy-badger
           youtube-nonstop
           consent-o-matic
