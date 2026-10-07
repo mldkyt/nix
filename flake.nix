@@ -16,11 +16,6 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
-
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs =
     inputs@{
@@ -28,7 +23,6 @@
       home-manager,
       plasma-manager,
       catppuccin,
-      nur,
       ...
     }:
     let
@@ -42,8 +36,6 @@
         };
         modules = [
           home-manager.nixosModules.home-manager
-          nur.modules.nixos.default
-
           ./modules/workstation
           ./modules/pc
           ./hardware-configuration.nix
@@ -52,7 +44,6 @@
             home-manager.sharedModules = [
               plasma-manager.homeModules.plasma-manager
               catppuccin.homeModules.catppuccin
-              nur.modules.homeManager.default
             ];
 
             home-manager.users.mldkyt = {
@@ -68,8 +59,6 @@
         };
         modules = [
           home-manager.nixosModules.home-manager
-          nur.modules.nixos.default
-
           ./modules/lappie
           ./modules/workstation
           ./hardware-configuration.nix
@@ -78,7 +67,6 @@
             home-manager.sharedModules = [
               plasma-manager.homeModules.plasma-manager
               catppuccin.homeModules.catppuccin
-              nur.modules.homeManager.default
             ];
 
             home-manager.users.mldkyt = {
