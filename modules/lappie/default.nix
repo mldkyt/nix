@@ -34,9 +34,28 @@
       CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
       CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
     };
+
   };
 
+  services.auto-cpufreq = {
+    enable = true;
+    settings = {
+      battery = {
+        governor = "powersave";
+        turbo = "never";
+      };
+      charger = {
+        governor = "powersave";
+        turbo = "auto";
+      };
+    };
+  };
   services.power-profiles-daemon.enable = false;
+
+  services.system76-scheduler = {
+    enable = true;
+    useStockConfig = true;
+  };
 
   #   services.tor = {
   #     enable = true;
